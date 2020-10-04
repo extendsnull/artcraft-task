@@ -1,0 +1,19 @@
+{
+  "extends": ["stylelint-config-htmlacademy"],
+  "rules": {
+    "at-rule-no-vendor-prefix": null,
+    "media-feature-name-no-vendor-prefix": null,
+    "property-no-vendor-prefix": null,
+    "selector-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "at-rule-no-unknown": null,
+    "function-comma-space-after": null,
+    "function-parentheses-space-inside": null,
+    "value-list-comma-newline-after": null,
+    "at-rule-empty-line-before": ["always", {
+      "except": ["first-nested", "blockless-after-same-name-blockless"],
+      "ignoreAtRules": "else"
+    }],
+    "block-closing-brace-newline-after": "never-single-line"
+  }
+}
