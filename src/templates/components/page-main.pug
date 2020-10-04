@@ -11,7 +11,7 @@ mixin card-available
           alt="")
       .card__inner
         header.card__header
-          p.card__title.card__title--has-counter
+          h3.card__title.card__title--has-counter
             | #[span.card__title-counter 08.] #[b Техника] #[br]в&nbsp;ZModeller
           a.card__thumb-wrapper(href="/")
             img.card__thumb(
@@ -41,7 +41,7 @@ mixin card-unavailable
           alt="")
       .card__inner
         header.card__header
-          p.card__title.card__title--has-counter
+          h3.card__title.card__title--has-counter
             | #[span.card__title-counter 10.] #[b Техника] #[br]в&nbsp;ZModeller
           a.card__thumb-wrapper(href="/")
             img.card__thumb(
@@ -70,7 +70,7 @@ mixin card-timer
           alt="")
       .card__inner
         header.card__header
-          p.card__title #[b Онлайн встреча] #[br]4 неделя
+          h3.card__title #[b Онлайн встреча] #[br]4 неделя
         .card__timer.timer
           p.timer__label 3 дня
           p.timer__time 16:56:22
@@ -94,7 +94,7 @@ mixin card-large
           alt="")
       .card__inner
         header.card__header
-          p.card__title #[b Финальные работы курса]
+          h3.card__title #[b Финальные работы курса]
           a.card__thumb-wrapper(href="/")
             img.card__thumb(
               src="img/thumb.jpg",
