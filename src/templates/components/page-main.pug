@@ -1,12 +1,15 @@
 mixin card-available
   article.card.card--available
     .card__layout
-      img.card__preview(
-        src="img/preview.png",
-        width="500",
-        height="500",
-        alt="")
-      .card__body
+      picture.card__preview
+        source(srcset="img/preview-01.webp", type="image/webp")
+        source(srcset="img/preview-01.jpg", type="image/jpeg")
+        img.card__preview(
+          src="img/preview-01.jpg",
+          width="500",
+          height="500",
+          alt="")
+      .card__inner
         header.card__header
           p.card__title.card__title--has-counter
             | #[span.card__title-counter 08.] #[b Техника] #[br]в&nbsp;ZModeller
@@ -16,23 +19,27 @@ mixin card-available
               width="50",
               height="50",
               alt="John Smith")
-        p.card__description Изучение ZModeller для применения к&nbsp;тяжелой технике
-        p.card__time 2 часа
+        .card__body
+          p.card__description Изучение ZModeller для применения к&nbsp;тяжелой технике
+          p.card__time 2 часа
         .card__status
+          span(style="width: 50%")
     .card__footer
       p Завершено на&nbsp;50%
-      a.card__continue(href="/")
-        b Продолжить
+      a.card__continue(href="/") Продолжить
 
 mixin card-unavailable
   article.card.card--unavailable
     .card__layout
-      img.card__preview(
-        src="img/preview.png",
-        width="500",
-        height="500",
-        alt="")
-      .card__body
+      picture.card__preview
+        source(srcset="img/preview-01.webp", type="image/webp")
+        source(srcset="img/preview-01.jpg", type="image/jpeg")
+        img.card__preview(
+          src="img/preview-01.jpg",
+          width="500",
+          height="500",
+          alt="")
+      .card__inner
         header.card__header
           p.card__title.card__title--has-counter
             | #[span.card__title-counter 10.] #[b Техника] #[br]в&nbsp;ZModeller
@@ -42,43 +49,50 @@ mixin card-unavailable
               width="50",
               height="50",
               alt="John Smith")
-        p.card__description Изучение ZModeller для применения к&nbsp;тяжелой технике
-        p.card__time 30 минут
-        .card__status
+        .card__body
+          p.card__description Изучение ZModeller для применения к&nbsp;тяжелой технике
+          p.card__time 30 минут
+          .card__status
+            span(style="width: 100%")
     .card__footer
-      p Завершено на&nbsp;50%
-      a.card__continue(href="/")
-        b Продолжить
+      p #[b доступно с: 22.10.2017]
 
 mixin card-timer
   article.card
     .card__layout
-      img.card__preview(
-        src="img/preview.png",
-        width="500",
-        height="500",
-        alt="")
-      .card__body
+      picture.card__preview
+        source(srcset="img/preview-01.webp", type="image/webp")
+        source(srcset="img/preview-01.jpg", type="image/jpeg")
+        img.card__preview(
+          src="img/preview-01.jpg",
+          width="500",
+          height="500",
+          alt="")
+      .card__inner
         header.card__header
           p.card__title #[b Онлайн встреча] #[br]4 неделя
         .card__timer.timer
-          p #[b 3 дня]
-          p 16:56:22
-        p.card__description Онлайн-встреча 4&nbsp;недели. Фидбек и&nbsp;обсуждение ZModeller
-        p.card__time &plusmn;2 часа
+          p.timer__label 3 дня
+          p.timer__time 16:56:22
+        .card__body
+          p.card__description Онлайн-встреча 4&nbsp;недели. Фидбек и&nbsp;обсуждение ZModeller
+          p.card__time &plusmn; 2 часа
         .card__status
     .card__footer
-      p #[b до&nbsp;встречи осталось 3&nbsp;дня 16ч. 56м.]
+      p #[b до&nbsp;встречи осталось] #[span.nowrap 3 дня 16ч. 56м.]
 
 mixin card-large
-  article.card
+  article.card.card--large
     .card__layout
-      img.card__preview(
-        src="img/preview.png",
-        width="500",
-        height="500",
-        alt="")
-      .card__body
+      picture.card__preview
+        source(srcset="img/preview-01.webp", type="image/webp")
+        source(srcset="img/preview-01.jpg", type="image/jpeg")
+        img.card__preview(
+          src="img/preview-01.jpg",
+          width="500",
+          height="500",
+          alt="")
+      .card__inner
         header.card__header
           p.card__title #[b Финальные работы курса]
           a.card__thumb-wrapper(href="/")
@@ -87,43 +101,45 @@ mixin card-large
               width="50",
               height="50",
               alt="John Smith")
-        p.card__description Изучение ZModeller для применения к&nbsp;тяжелой технике
+        .card__body
+          p.card__description Изучение ZModeller для применения к&nbsp;тяжелой технике
       a.card__continue(href="/")
         span.sr-only Продолжить
 
 main.page__main.page-main
   .container
     h1.page-main__title ZBrush
-    section.page-section
-      header.page-section__header
-        h2.page-section__title Уроки
-        button.page-section__toggler(
+    section.content-section
+      header.content-section__header
+        h2.content-section__title Уроки
+        button.content-section__toggler.content-section__toggler--active(
           type="button",
           data-label-alt="Развернуть",
           title="Свернуть")
           span.sr-only Свернуть
-      p.page-section__description В&nbsp;данном блоке каждую новую недель после начала обучения, будут открываться новые уроки. Каждая плашка&nbsp;&mdash; видеоурок с&nbsp;домашним заданием и&nbsp;открытым чатом. Поскольку формат песочницы максимально себя раскрывает при групповой мотивации и&nbsp;помощи&nbsp;&mdash; обязательно загружай все задания, даже если они тебе кажутся неидеальными и&nbsp;в&nbsp;дружеской форме помогай увидеть ошибки другим!
-      .page-section__cards
-        .row
-          - for (let i = 0; i < 2; i++)
-            .col-3
-              +card-available
-            .col-3
-              +card-unavailable
-            .col-3
-              +card-timer
-            .col-3
-              +card-timer
+      .content-section__body
+        p.content-section__description В&nbsp;данном блоке каждую новую недель после начала обучения, будут открываться новые уроки. Каждая плашка&nbsp;&mdash; видеоурок с&nbsp;домашним заданием и&nbsp;открытым чатом. Поскольку формат песочницы максимально себя раскрывает при групповой мотивации и&nbsp;помощи&nbsp;&mdash; обязательно загружай все задания, даже если они тебе кажутся неидеальными и&nbsp;в&nbsp;дружеской форме помогай увидеть ошибки другим!
+        .content-section__cards
+          .row
+            - for (let i = 0; i < 2; i++)
+              .col-12.col-sm-6.col-lg-3.content-section__card-wrapper
+                +card-available
+              .col-12.col-sm-6.col-lg-3.content-section__card-wrapper
+                +card-unavailable
+              .col-12.col-sm-6.col-lg-3.content-section__card-wrapper
+                +card-timer
+              .col-12.col-sm-6.col-lg-3.content-section__card-wrapper
+                +card-timer
 
 
-    section.page-section
-      header.page-section__header
-        h2.page-section__title Финал
-        button.page-section__toggler(
+    section.content-section
+      header.content-section__header
+        h2.content-section__title Финал
+        button.content-section__toggler.content-section__toggler--active(
           type="button",
           data-label-alt="Развернуть",
           title="Свернуть")
           span.sr-only Свернуть
-      p.page-section__description Это финальный блок, где выпускники курса &laquo;Цифровой рисунок&nbsp;&mdash; Песочница&raquo; загружают свои итоговые работы.Его уже можно посмотреть, а&nbsp;загрузить сюда свою работу можно после просмотра всех блоков и&nbsp;выполнения домашних заданий.Пожалуйста, не&nbsp;забывайте выполнять задания из&nbsp;блока &laquo;Уроки&raquo;, это напрямую оказывает влияние на&nbsp;финальную работу. Также, загружайте свои итоги и&nbsp;сравнивайте с&nbsp;работами других студентов.
-      .page-section__cards
+      .content-section__body
+        p.content-section__description Это финальный блок, где выпускники курса &laquo;Цифровой рисунок&nbsp;&mdash; Песочница&raquo; загружают свои итоговые работы.Его уже можно посмотреть, а&nbsp;загрузить сюда свою работу можно после просмотра всех блоков и&nbsp;выполнения домашних заданий.Пожалуйста, не&nbsp;забывайте выполнять задания из&nbsp;блока &laquo;Уроки&raquo;, это напрямую оказывает влияние на&nbsp;финальную работу. Также, загружайте свои итоги и&nbsp;сравнивайте с&nbsp;работами других студентов.
         +card-large

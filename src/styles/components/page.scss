@@ -1,0 +1,19 @@
+/* page */
+
+.page {
+  font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+}
+
+// body
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// footer
+
+.page__footer {
+  margin-top: auto;
+}

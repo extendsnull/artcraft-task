@@ -1,0 +1,46 @@
+/* page-footer */
+
+.page-footer {
+  padding: 20px 0;
+  color: $artcraft-color-white;
+  font-size: 14px;
+  background-color: $artcraft-color-black;
+
+  @include media-min($lg) {
+    padding: 35px 0;
+    font-size: 16px;
+  }
+}
+
+// navigation
+
+.page-footer__navigation {
+  margin-bottom: 15px;
+
+  @include media-min($lg) {
+    margin-bottom: 20px;
+  }
+}
+
+// bottom
+
+.page-footer__bottom {
+  color: $artcraft-color-darkgray;
+  text-align: center;
+}
+
+// attention
+
+.page-footer__attention {
+  margin-bottom: 15px;
+
+  @include media-min($lg) {
+    margin-bottom: 30px;
+  }
+}
+
+// copyright
+
+.page-footer__copyright {
+  font-weight: 700;
+}

@@ -1,0 +1,51 @@
+/* timer */
+
+.timer {
+  padding: 0 20px;
+}
+
+// label
+
+.timer__label {
+  margin-bottom: 10px;
+  font-size: 45px;
+  font-weight: 700;
+
+  @include media-min($sm) {
+    font-size: 32px;
+  }
+
+  @include media-min($md) {
+    font-size: 45px;
+  }
+
+  @include media-min($lg) {
+    font-size: 32px;
+  }
+
+  @include media-min($xl) {
+    font-size: 45px;
+  }
+}
+
+// time
+
+.timer__time {
+  font-size: 52px;
+
+  @include media-min($sm) {
+    font-size: 42px;
+  }
+
+  @include media-min($md) {
+    font-size: 52px;
+  }
+
+  @include media-min($lg) {
+    font-size: 42px;
+  }
+
+  @include media-min($xl) {
+    font-size: 52px;
+  }
+}

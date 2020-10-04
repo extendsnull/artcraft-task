@@ -1,0 +1,67 @@
+/* user-navigation */
+
+.user-navigation {
+  display: flex;
+  justify-content: center;
+
+  @include media-min($sm) {
+    justify-content: flex-end;
+  }
+}
+
+// list
+
+.user-navigation__list {
+  display: flex;
+}
+
+// item
+
+.user-navigation__item {
+  margin-right: 15px;
+
+  @include media-min($md) {
+    margin-right: 25px;
+  }
+
+  @include media-min($lg) {
+    margin-right: 35px;
+  }
+
+  @include media-min($xl) {
+    margin-right: 45px;
+  }
+}
+
+.user-navigation__item:last-child {
+  margin-right: 0;
+}
+
+// button
+
+.user-navigation__button {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  fill: $artcraft-color-black;
+  transition: fill $transition-duration linear;
+  cursor: pointer;
+
+  @include media-min($lg) {
+    width: 30px;
+    height: 30px;
+  }
+
+  &:hover {
+    fill: $artcraft-color-blue;
+  }
+}
+
+.user-navigation__button .icon {
+  width: inherit;
+  height: inherit;
+}
