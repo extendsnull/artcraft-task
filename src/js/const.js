@@ -1,3 +1,0 @@
-const DESKTOP_BREAKPOINT = 992;
-
-export { DESKTOP_BREAKPOINT };
