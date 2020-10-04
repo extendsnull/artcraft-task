@@ -1,9 +1,13 @@
 extends layouts/main
 
 prepend head
+  - const title = "ArtCract - ZBrush";
 
 prepend header
+  include components/page-header
 
 prepend main
+  include components/page-main
 
 prepend footer
+  include components/page-footer

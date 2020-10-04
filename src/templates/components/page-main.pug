@@ -1,0 +1,129 @@
+mixin card-available
+  article.card.card--available
+    .card__layout
+      img.card__preview(
+        src="img/preview.png",
+        width="500",
+        height="500",
+        alt="")
+      .card__body
+        header.card__header
+          p.card__title.card__title--has-counter
+            | #[span.card__title-counter 08.] #[b Техника] #[br]в&nbsp;ZModeller
+          a.card__thumb-wrapper(href="/")
+            img.card__thumb(
+              src="img/thumb.jpg",
+              width="50",
+              height="50",
+              alt="John Smith")
+        p.card__description Изучение ZModeller для применения к&nbsp;тяжелой технике
+        p.card__time 2 часа
+        .card__status
+    .card__footer
+      p Завершено на&nbsp;50%
+      a.card__continue(href="/")
+        b Продолжить
+
+mixin card-unavailable
+  article.card.card--unavailable
+    .card__layout
+      img.card__preview(
+        src="img/preview.png",
+        width="500",
+        height="500",
+        alt="")
+      .card__body
+        header.card__header
+          p.card__title.card__title--has-counter
+            | #[span.card__title-counter 10.] #[b Техника] #[br]в&nbsp;ZModeller
+          a.card__thumb-wrapper(href="/")
+            img.card__thumb(
+              src="img/thumb.jpg",
+              width="50",
+              height="50",
+              alt="John Smith")
+        p.card__description Изучение ZModeller для применения к&nbsp;тяжелой технике
+        p.card__time 30 минут
+        .card__status
+    .card__footer
+      p Завершено на&nbsp;50%
+      a.card__continue(href="/")
+        b Продолжить
+
+mixin card-timer
+  article.card
+    .card__layout
+      img.card__preview(
+        src="img/preview.png",
+        width="500",
+        height="500",
+        alt="")
+      .card__body
+        header.card__header
+          p.card__title #[b Онлайн встреча] #[br]4 неделя
+        .card__timer.timer
+          p #[b 3 дня]
+          p 16:56:22
+        p.card__description Онлайн-встреча 4&nbsp;недели. Фидбек и&nbsp;обсуждение ZModeller
+        p.card__time &plusmn;2 часа
+        .card__status
+    .card__footer
+      p #[b до&nbsp;встречи осталось 3&nbsp;дня 16ч. 56м.]
+
+mixin card-large
+  article.card
+    .card__layout
+      img.card__preview(
+        src="img/preview.png",
+        width="500",
+        height="500",
+        alt="")
+      .card__body
+        header.card__header
+          p.card__title #[b Финальные работы курса]
+          a.card__thumb-wrapper(href="/")
+            img.card__thumb(
+              src="img/thumb.jpg",
+              width="50",
+              height="50",
+              alt="John Smith")
+        p.card__description Изучение ZModeller для применения к&nbsp;тяжелой технике
+      a.card__continue(href="/")
+        span.sr-only Продолжить
+
+main.page__main.page-main
+  .container
+    h1.page-main__title ZBrush
+    section.page-section
+      header.page-section__header
+        h2.page-section__title Уроки
+        button.page-section__toggler(
+          type="button",
+          data-label-alt="Развернуть",
+          title="Свернуть")
+          span.sr-only Свернуть
+      p.page-section__description В&nbsp;данном блоке каждую новую недель после начала обучения, будут открываться новые уроки. Каждая плашка&nbsp;&mdash; видеоурок с&nbsp;домашним заданием и&nbsp;открытым чатом. Поскольку формат песочницы максимально себя раскрывает при групповой мотивации и&nbsp;помощи&nbsp;&mdash; обязательно загружай все задания, даже если они тебе кажутся неидеальными и&nbsp;в&nbsp;дружеской форме помогай увидеть ошибки другим!
+      .page-section__cards
+        .row
+          - for (let i = 0; i < 2; i++)
+            .col-3
+              +card-available
+            .col-3
+              +card-unavailable
+            .col-3
+              +card-timer
+            .col-3
+              +card-timer
+
+
+    section.page-section
+      header.page-section__header
+        h2.page-section__title Финал
+        button.page-section__toggler(
+          type="button",
+          data-label-alt="Развернуть",
+          title="Свернуть")
+          span.sr-only Свернуть
+      p.page-section__description Это финальный блок, где выпускники курса &laquo;Цифровой рисунок&nbsp;&mdash; Песочница&raquo; загружают свои итоговые работы.Его уже можно посмотреть, а&nbsp;загрузить сюда свою работу можно после просмотра всех блоков и&nbsp;выполнения домашних заданий.Пожалуйста, не&nbsp;забывайте выполнять задания из&nbsp;блока &laquo;Уроки&raquo;, это напрямую оказывает влияние на&nbsp;финальную работу. Также, загружайте свои итоги и&nbsp;сравнивайте с&nbsp;работами других студентов.
+      .page-section__cards
+        +card-large

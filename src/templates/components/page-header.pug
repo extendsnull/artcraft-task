@@ -1,0 +1,27 @@
+header.page__header.page-header
+  .container
+    .row
+      .col-3
+        a.page-header__logo-wrapper(href="/")
+          img.page-header__logo(
+            src="img/site-logo.svg",
+            width="220",
+            height="64",
+            alt="ArtCraft logotype")
+      .col-7
+        nav.page-header__navigation.site-navigation
+          ul.site-navigation__list
+            each item in ["Главная", "Календарь", "Wiki"]
+              li.site-navigation__item
+                a.site-navigation__link(href="/")!= item
+      .col-2
+        .user-navigation
+          ul.user-navigation__list
+            li.user-navigation__item
+              button.user-navigation__button(type="button")
+                +svg-icon("notification", 24)
+                span.sr-only Уведомления
+            li.user-navigation__item
+              a.user-navigation__button(href="#")
+                +svg-icon("cabinet", 24)
+                span.sr-only Личный кабинет
