@@ -72,14 +72,24 @@ mixin card-timer
         header.card__header
           h3.card__title #[b Онлайн встреча] #[br]4 неделя
         .card__timer.timer
-          p.timer__label 3 дня
-          p.timer__time 16:56:22
+          p.timer__days(
+            data-timer="2020-10-08T12:00:00.131+03:00",
+            data-format="days") 3 дня
+          p.timer__time(
+            data-timer="2020-10-08T12:00:00.131+03:00"
+            data-format="time") 16:56:22
         .card__body
           p.card__description Онлайн-встреча 4&nbsp;недели. Фидбек и&nbsp;обсуждение ZModeller
           p.card__time &plusmn; 2 часа
         .card__status
     .card__footer
-      p #[b до&nbsp;встречи осталось] #[span.nowrap 3 дня 16ч. 56м.]
+      p
+        b до&nbsp;встречи осталось
+        |
+        |
+        span.nowrap(
+          data-timer="2020-10-08T12:00:00.131+03:00",
+          data-format="days-h-m") 3 дня 16ч. 56м.
 
 mixin card-large
   article.card.card--large
