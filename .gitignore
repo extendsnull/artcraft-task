@@ -1,0 +1,19 @@
+# Файлы и папки операционной системы
+.DS_Store
+Thumbs.db
+bash.exe.stackdump
+
+# Файлы редактора
+.idea
+*.sublime*
+.vscode
+
+# Вспомогательные файлы
+*.log*
+node_modules/
+
+# Папка с собранными файлами проекта
+build/
+
+# Разное
+temp.md
